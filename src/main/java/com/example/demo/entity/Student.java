@@ -25,7 +25,7 @@ public class Student{
      public void setDept(String dept){
         this.dept=dept;
     }
-     public void setDob(String dob){
+     public void setDob(LocalDate dob){
         this.dept=dept;
     }
     public LocalDate getDob(){
