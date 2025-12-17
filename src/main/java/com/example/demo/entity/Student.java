@@ -13,4 +13,23 @@ public class Student{
     public void setId(Long id){
         this.id=id;
     }
+    public String getName(){
+        return name;
+    }
+     public void setName(String getname){
+        this.name=name;
+    }
+    public String getDept(){
+        return dept;
+    }
+     public void setDept(String dept){
+        this.dept=dept;
+    }
+     public void setDob(String dob){
+        this.dept=dept;
+    }
+    public LocalDate getDob(){
+        return dob;
+    }
+    
 }
