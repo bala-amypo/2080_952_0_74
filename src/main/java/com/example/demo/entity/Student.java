@@ -31,5 +31,10 @@ public class Student{
     public LocalDate getDob(){
         return dob;
     }
-    
+     public void setCgpa(float cgpa){
+        this.cgpa=cgpa;
+    }
+    public float getCgpa(){
+        return cgpa;
+    }
 }
