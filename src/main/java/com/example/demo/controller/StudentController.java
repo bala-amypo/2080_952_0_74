@@ -30,5 +30,7 @@ public class StudentController {
         return studentService.getStudentById(id);
     }
     @GetMapping("/update/{id}")
-    public String update(@)
+    public String update(@PathVariable Long id,@RequestBody Student st){
+        return studentRepository.updateData(id,st);
+    }
 }
