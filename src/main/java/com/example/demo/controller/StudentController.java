@@ -29,4 +29,6 @@ public class StudentController {
     public Optional<Student> getStudentById(@PathVariable Long id) {
         return studentService.getStudentById(id);
     }
+    @GetMapping("/update/{id}")
+    public String update(@)
 }
