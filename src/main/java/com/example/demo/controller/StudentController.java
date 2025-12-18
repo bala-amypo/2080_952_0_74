@@ -1,36 +1,31 @@
 package com.example.demo.controller;
-
 import java.util.*;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
 import com.example.demo.entity.Student;
 import com.example.demo.service.StudentService;
-
 @RestController
-@RequestMapping("/students")
 public class StudentController {
-
     @Autowired
-    private StudentService studentService;
-
-    @PostMapping
-    public Student saveStudent(@RequestBody Student student) {
-        return studentService.saveStudent(student);
+    StudentService stdser;
+    @PostMapping("/addStudent")
+    public Student addStudent(@RequestBody Student st){
+        return stdser.postStudent(st);
     }
-
-    @GetMapping
+    @GetMapping("/getAllStudents")
     public List<Student> getAllStudents() {
-        return studentService.getAllStudents();
+        return stdser.getAllStudents();
     }
-
     @GetMapping("/getById/{id}")
-    public Optional<Student> getStudentById(@PathVariable Long id) {
-        return studentService.getStudentById(id);
+    public Optional<Student> getId(@PathVariable Long id){
+        return stdser.getById(id);
     }
-    @GetMapping("/update/{id}")
-    public String update(@PathVariable Long id,@RequestBody Student st){
-        return studentRepository.updateData(id,st);
+    @PutMapping("/update/{id}")
+    public String update(@PathVariable Long id, @RequestBody Student st){
+        return stdser.updateData(id,st);
+    }
+    @DeleteMapping("/delete/{id}")
+    public String delete(@PathVariable Long id){
+        return stdser.deleteData(id);
     }
 }
