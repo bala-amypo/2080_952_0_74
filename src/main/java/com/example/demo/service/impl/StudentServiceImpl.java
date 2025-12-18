@@ -28,5 +28,8 @@ public class StudentServiceImpl implements StudentService {
     @Override
     public Optional<Student> getStudentById(Long id) {
         return studentRepository.findById(id);
+        if(status){
+            
+        }
     }
 }
